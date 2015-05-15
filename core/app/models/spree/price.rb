@@ -1,7 +1,7 @@
-module Spree
+  module Spree
   class Price < Spree::Base
     acts_as_paranoid
-    belongs_to :variant, class_name: 'Spree::Variant', inverse_of: :prices, touch: true
+    belongs_to :variant, class_name: 'Spree::Variant', inverse_of: :prices, touch: false
 
     validate :check_price
     validates :amount, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
