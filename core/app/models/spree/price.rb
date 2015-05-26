@@ -1,4 +1,4 @@
-module Spree
+  module Spree
   class Price < Spree::Base
     acts_as_paranoid
     belongs_to :variant, class_name: 'Spree::Variant', inverse_of: :prices, touch: false
