@@ -11,22 +11,24 @@ child :master => :master do
   extends "spree/api/variants/small"
 end
 
+#These are removed to solve memory performance issues
+
 #child :variants => :variants do
 #  extends "spree/api/variants/small"
 #end
 
-child :option_types => :option_types do
-  attributes *option_type_attributes
-end
+#child :option_types => :option_types do
+#  attributes *option_type_attributes
+#end
 
-child :product_properties => :product_properties do
-  attributes *product_property_attributes
-end
+#child :product_properties => :product_properties do
+#  attributes *product_property_attributes
+#end
 
-child :classifications => :classifications do
-  attributes :taxon_id, :position
+#child :classifications => :classifications do
+#  attributes :taxon_id, :position
 
-  child(:taxon) do
-    extends "spree/api/taxons/show"
-  end
-end
+#  child(:taxon) do
+#    extends "spree/api/taxons/show"
+#  end
+#end
