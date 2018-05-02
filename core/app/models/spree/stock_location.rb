@@ -49,7 +49,7 @@ module Spree
     #
     # @return [StockItem] Corresponding StockItem for the StockLocation's variant.
     def stock_item_or_create(variant)
-      stock_item(variant) || stock_items.create(variant_id: variant.variant_id)
+      stock_item(variant) || stock_items.create(variant_id: variant.id)
     end
 
     def count_on_hand(variant)
