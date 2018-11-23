@@ -1,1 +1,1 @@
-attributes *product_attributes
+#attributes *product_attributes
