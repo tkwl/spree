@@ -3,24 +3,24 @@ module Spree
     class ProductsController < Spree::Api::BaseController
 
       def index
-        if params[:ids]
-          @products = product_scope.where(id: params[:ids].split(",").flatten)
-        else
-          @products = product_scope.ransack(params[:q]).result
-        end
+        #if params[:ids]
+        #  @products = product_scope.where(id: params[:ids].split(",").flatten)
+        #else
+        #  @products = product_scope.ransack(params[:q]).result
+        #end
 
-        @products = @products.distinct.page(params[:page]).per(params[:per_page])
-        expires_in 15.minutes, :public => true
-        headers['Surrogate-Control'] = "max-age=#{15.minutes}"
-        respond_with(@products)
+        #@products = @products.distinct.page(params[:page]).per(params[:per_page])
+        #expires_in 15.minutes, :public => true
+        #headers['Surrogate-Control'] = "max-age=#{15.minutes}"
+        #respond_with(@products)
       end
 
       def show
-        @product = find_product(params[:id])
-        expires_in 15.minutes, :public => true
-        headers['Surrogate-Control'] = "max-age=#{15.minutes}"
-        headers['Surrogate-Key'] = "product_id=1"
-        respond_with(@product)
+        #@product = find_product(params[:id])
+        #expires_in 15.minutes, :public => true
+        #headers['Surrogate-Control'] = "max-age=#{15.minutes}"
+        #headers['Surrogate-Key'] = "product_id=1"
+        #respond_with(@product)
       end
 
       # Takes besides the products attributes either an array of variants or
